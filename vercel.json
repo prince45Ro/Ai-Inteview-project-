@@ -1,0 +1,81 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "installCommand": "npm install && npm --prefix Hackthone_frontend install",
+  "buildCommand": "npm --prefix Hackthone_frontend run build",
+  "outputDirectory": "Hackthone_frontend/dist",
+  "functions": {
+    "api/auth.js": {
+      "maxDuration": 60
+    },
+    "api/resume.js": {
+      "maxDuration": 60
+    },
+    "api/interview.js": {
+      "maxDuration": 60
+    },
+    "api/records.js": {
+      "maxDuration": 60
+    },
+    "api/index.js": {
+      "maxDuration": 60
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/resume/(.*)",
+      "destination": "/api/resume"
+    },
+    {
+      "source": "/api/records/(.*)",
+      "destination": "/api/records"
+    },
+    {
+      "source": "/api/interview/(.*)",
+      "destination": "/api/interview"
+    },
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/index"
+    },
+    {
+      "source": "/register",
+      "destination": "/api/auth"
+    },
+    {
+      "source": "/login",
+      "destination": "/api/auth"
+    },
+    {
+      "source": "/login/google",
+      "destination": "/api/auth"
+    },
+    {
+      "source": "/login/google/redirect",
+      "destination": "/api/auth"
+    },
+    {
+      "source": "/forgot-password",
+      "destination": "/api/auth"
+    },
+    {
+      "source": "/reset-password",
+      "destination": "/api/auth"
+    },
+    {
+      "source": "/admin/login",
+      "destination": "/api/auth"
+    },
+    {
+      "source": "/admin/register",
+      "destination": "/api/auth"
+    },
+    {
+      "source": "/logout",
+      "destination": "/api/auth"
+    },
+    {
+      "source": "/me",
+      "destination": "/api/auth"
+    }
+  ]
+}
