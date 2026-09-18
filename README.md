@@ -1,2 +1,2 @@
-# hackthone
+
 # NeuralAI
